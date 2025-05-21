@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Posts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1DA1F2;
+      --secondary: #E8F5FE;
+      --dark: #15202B;
+      --light: #F7F9FA;
+      --gray: #657786;
+      --white: #FFFFFF;
+      --danger: #E0245E;
+      --success: #17BF63;
+    }
+    .profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.post-image-container {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.post-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.post-image:hover {
+  transform: scale(1.02);
+}
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      color: var(--primary);
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+    
+    .btn-danger {
+      background-color: var(--danger);
+      color: var(--white);
+    }
+    
+    .btn-danger:hover {
+      background-color: #C81E4E;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(224, 36, 94, 0.2);
+    }
+    
+    .posts-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .post-card {
+      background-color: var(--white);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .post-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .post-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--secondary);
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 20px;
+    }
+    
+    .post-user {
+      font-weight: 700;
+      color: var(--dark);
+    }
+    
+    .post-time {
+      color: var(--gray);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+    
+    .post-content {
+      margin-bottom: 15px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    
+    .post-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    
+    .post-actions {
+      display: flex;
+      gap: 20px;
+      color: var(--gray);
+    }
+    
+    .post-action {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    
+    .post-action:hover {
+      color: var(--primary);
+    }
+    
+    .like-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      color: var(--gray);
+      transition: all 0.3s;
+    }
+    
+    .like-btn:hover {
+      color: var(--danger);
+    }
+    
+    .like-btn.liked {
+      color: var(--danger);
+    }
+    
+    .like-btn.liked i {
+      font-weight: 900;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--gray);
+    }
+    
+    .empty-icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+      color: #E1E8ED;
+    }
+    .header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: #1a8cd8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.2);
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
+
+.btn {
+  border-radius: 50px;
+}
+
+
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+
+.container {
+  padding: 20px 15px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-globe"></i> Explore Posts</h1>
+      <div class="header-buttons">
+        <button id="createPost" class="btn btn-primary">
+          <i class="fas fa-plus"></i> Create Post
+        </button>
+        <button id="logout" class="btn btn-danger">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </header>
+
+    <div id="postsContainer" class="posts-container">
+      <div class="empty-state">
+        <div class="empty-icon">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <p>Loading posts...</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="all-post.js"></script>
+</body>
+</html>
